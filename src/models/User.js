@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     });
   
     User.associate = (models) => {
-      User.belongsTo(models.Blog_posts,
+      User.belongsToMany(models.Blog_posts,
         { foreignKey: 'userId', as: 'blog_post' });
     };
   
