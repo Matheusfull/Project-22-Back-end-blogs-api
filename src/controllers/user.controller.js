@@ -1,6 +1,6 @@
 require('dotenv/config');
 const jwt = require('jsonwebtoken');
-const { insert /* getByEmail */ } = require('../services/userService');
+const { insert, getUsers } = require('../services/userService');
 
 const secret = process.env.JWT_SECRET || 'seusecretdetoken';
 
@@ -29,6 +29,12 @@ const userController = async (req, res) => {
     res.status(201).json({ token });
   };
 
+  const getAllUsers = async (_req, res) => {
+    const users = await getUsers();
+    return res.status(200).json(users);
+  };
+
 module.exports = {
     userController,
+    getAllUsers,
 };

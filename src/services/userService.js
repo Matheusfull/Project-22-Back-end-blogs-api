@@ -10,7 +10,13 @@ const insert = async (info) => {
   return newUser;
 };
 
+const getUsers = async () => {
+  const users = await User.findAll({ attributes: { exclude: 'password' } });
+  return users;
+};
+
 module.exports = {
     getByEmail,
     insert,
+    getUsers,
 };
