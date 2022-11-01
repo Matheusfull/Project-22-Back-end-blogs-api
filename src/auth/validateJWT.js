@@ -25,16 +25,6 @@ module.exports = async (req, res, next) => {
   try {
     /* Através o método verify, podemos validar e decodificar o nosso JWT. */
     jwt.verify(token, secret);
-    /*
-      A variável decoded será um objeto equivalente ao seguinte:
-      {
-        data: {
-          userId: 1
-        },
-        iat: 1656616422,
-        exp: 1657221222
-      }
-    */
 
     /* Caso o token esteja expirado, a própria biblioteca irá retornar um erro,
        por isso não é necessário fazer validação do tempo.
