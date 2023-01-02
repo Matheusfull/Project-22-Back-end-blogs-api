@@ -50,3 +50,11 @@ const login = async (req, res) => {
 module.exports = {
   login,
 };
+
+/*
+Requisito 3
+1 - Primeira coisa a se fazer é ver se foi passado um email e uma senha, se não for, já vamos avisar
+2 - Caso seja passado, precisamos checar, ver se estão corretos. Para isso, vamos usar uma função que vai até o banco de dados, pega o email que foi passado no corpo da requisição e ver se ele está no banco de dados, se tiver, traga todas as informações relacionados a esse email, tal como a senha.
+3 - Se não houver email e a senha vinda do banco de dados for diferente da senha do corpo da requisição, então vamos avisar que os campos estão incorretos.
+4 - Vamos pegar esse email, o segredo e o objeto com as config do token e construir o própio token
+*/

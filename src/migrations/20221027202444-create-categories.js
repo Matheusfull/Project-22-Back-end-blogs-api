@@ -18,3 +18,8 @@ module.exports = {
     await queryInterface.dropTable('categories');
   },
 };
+
+/*
+Requisito 1
+Mesmo raciocínio da migration users
+*/

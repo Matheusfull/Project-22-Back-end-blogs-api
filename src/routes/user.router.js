@@ -6,7 +6,7 @@ const validateJWT = require('../auth/validateJWT');
 
 const router = express.Router();
 
-router.post('/', validateUser, userController.userController);
+router.post('/', validateUser, userController.userInsert);
 router.get('/', validateJWT, userController.getAllUsers);
 router.get('/:id', validateJWT, userController.userById);
 

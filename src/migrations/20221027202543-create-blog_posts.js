@@ -18,11 +18,15 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        // Informa que o campo é uma Foreign Key (Chave estrangeira)
         field: 'user_id',
+        // Configuram o que deve acontecer ao atualizar ou excluir um usuário
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         references: {
+          // Informa a tabela da referência da associação
           model: 'users',
+          // Informa a coluna da referência que é a chave correspondente
           key: 'id',
         },
       },
@@ -41,3 +45,9 @@ module.exports = {
     await queryInterface.dropTable('blog_posts');
   },
 };
+
+/*
+Requisito 1
+Mesmo raciocínio da migration users
+única observação é que temos que descrever a chave estrangeira
+*/

@@ -1,3 +1,4 @@
+// ----------------------------------Validando token nas requisições------------------------------
 const jwt = require('jsonwebtoken');
 
 require('dotenv/config');
@@ -29,12 +30,6 @@ module.exports = async (req, res, next) => {
     /* Caso o token esteja expirado, a própria biblioteca irá retornar um erro,
        por isso não é necessário fazer validação do tempo.
        Caso esteja tudo certo, nós então usamos o serviço de usuário para obter seus dados atualizados */
-
-    /* Não existe um usuário na nossa base com o id informado no token. */
-
-    /* O usuário existe! Colocamos ele em um campo no objeto req.
-       Dessa forma, o usuário estará disponível para outros middlewares que
-       executem em sequência */
 
     /* Por fim, chamamos o próximo middleware que, no nosso caso,
        é a própria callback da rota. */
